@@ -2,7 +2,7 @@
 
 [Play Lincoln Drive on GitHub Pages](https://kalebbennaveed.github.io/go-to-lincoln/)
 
-Start on Lincoln Mall facing the Nebraska State Capitol. Drive a striped red coupe, walk, ride a bicycle, or fly a helicopter. The city map lets you choose a waypoint or travel directly to a landmark. Discover all five stops to complete the tour. Your browser saves your visited stops on this device.
+Start on Lincoln Mall facing the Nebraska State Capitol. Drive a striped red coupe, walk, ride a bicycle, or fly a helicopter. Open the city map to search a street, drop a pin, set a waypoint, or travel directly to a landmark. Discover all five stops to complete the tour. Your browser saves your visited stops on this device.
 
 | Control | Action |
 | --- | --- |
@@ -25,6 +25,8 @@ Serve the repository with `python3 -m http.server 8000` and open `http://localho
 ## Geography and credits
 
 The City of Lincoln / Lancaster County GIS provides the [street centerlines](https://gis.lincoln.ne.gov/public/rest/services/Planning/Streets/MapServer/0), [2020 building footprints and heights](https://gis.lincoln.ne.gov/public/rest/services/BuildingSafety/BuildingFootprints/MapServer/5), [parks](https://gis.lincoln.ne.gov/public/rest/services/Parks/ParkBoundaries/MapServer/0), and [water bodies](https://gis.lincoln.ne.gov/public/rest/services/CityCounty/CZSBasemap/MapServer/4). Rebuild the central map with `uv run tools/build_map.py`. Coordinates use local meters east and south of 40.81° N, 96.70° W.
+
+The citywide map covers the municipal bounds and surrounding land, including Havelock, Pioneers Park, the airport and Holmes Lake. It contains 16,894 street segments and 123,223 building polygons. The downtown map loads first, followed by nearby neighborhoods in 800-meter tiles. Rebuild the regional index and tiles with `uv run tools/build_map.py --region`.
 
 The Capitol, Memorial Stadium, Pinnacle Bank Arena, and Sunken Gardens have custom models. Building facades, road widths, trees, traffic, and lighting are stylized. Terrain is level and missing building heights are estimated.
 
